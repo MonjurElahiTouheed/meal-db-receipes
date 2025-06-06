@@ -1,0 +1,21 @@
+import { useLoaderData } from "react-router";
+import Category from "../Category/Category";
+
+const Receipes = () => {
+    const receipes = useLoaderData();
+    console.log(receipes.categories);
+    const {categories} = receipes;
+    console.log(categories)
+    return (
+        <div>
+            <h2 className="text-2xl bg-red-300">Categories: {categories.length}</h2>
+            <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    categories.map(category => <Category key={category.idCategory} category={category}></Category>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default Receipes;
