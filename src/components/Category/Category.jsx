@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router";
 
 const Category = ({category}) => {
-    const {idCategory, strCategory, strCategoryThumb} = category;
+    const {strCategory, strCategoryThumb} = category;
     const navigate = useNavigate();
-    const handleShowReceipes = () => navigate(`/${strCategory}`);
+    const handleShowReceipes = () => navigate(`/categories/${strCategory}`);
     return (
         <div className="p-10 border-2 border-yellow-300 rounded-2xl">
             <div>

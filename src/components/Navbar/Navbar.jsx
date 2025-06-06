@@ -1,5 +1,5 @@
 import { NavLink } from "react-router"
-
+import './Navbar.css'
 const Navbar = () => {
   return (
     <nav>
@@ -8,8 +8,6 @@ const Navbar = () => {
       </div>
       <div>
         <NavLink to="/">Categories</NavLink>
-        <NavLink to="/images">Images</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
       </div>
     </nav>
   )

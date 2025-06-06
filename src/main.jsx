@@ -6,11 +6,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import Home from './components/Home/Home.jsx';
 import Categories from './components/Categories/Categories.jsx';
 import Receipes from './components/Receipes/Receipes.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
         element: <Categories></Categories>
       },
       {
-        path: '/:receipes',
+        path: '/categories/:receipes',
         loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.receipes}`),
         element: <Receipes></Receipes>
       }

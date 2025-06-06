@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import Category from "../Category/Category";
 
 const Categories = () => {
     const categoriesData = useLoaderData();
     console.log(categoriesData.categories);
     const {categories} = categoriesData;
-    console.log(categories)
+    console.log(categories);
     return (
         <div>
             <h2 className="text-2xl mt-10">Categories: {categories.length}</h2>
