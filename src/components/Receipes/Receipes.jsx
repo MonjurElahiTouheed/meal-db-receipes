@@ -1,18 +1,17 @@
-import { useLoaderData } from "react-router";
-import Category from "../Category/Category";
+import { Link, useLoaderData } from "react-router";
+import Meal from "../Meal/Meal";
 
 const Receipes = () => {
     const receipes = useLoaderData();
-    console.log(receipes.categories);
-    const {categories} = receipes;
-    console.log(categories)
+    const {meals} = receipes;
     return (
         <div>
-            <h2 className="text-2xl mt-10">Categories: {categories.length}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+            <h2>Receipes will load here</h2>
+            <div>
                 {
-                    categories.map(category => <Category key={category.idCategory} category={category}></Category>)
+                    meals.map((meal, index) => <Meal key={index} meal={meal}></Meal>)
                 }
+                <Link className="p-5 bg-black text-white mt-10" to={-1}><button>Go back</button></Link>
             </div>
         </div>
     );

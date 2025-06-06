@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import Home from './components/Home/Home.jsx';
+import Categories from './components/Categories/Categories.jsx';
 import Receipes from './components/Receipes/Receipes.jsx';
 
 const router = createBrowserRouter([
@@ -12,8 +13,13 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     children: [
       {
-        path: '/receipes',
+        path: '/',
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
+        element: <Categories></Categories>
+      },
+      {
+        path: '/:receipes',
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.receipes}`),
         element: <Receipes></Receipes>
       }
     ]
