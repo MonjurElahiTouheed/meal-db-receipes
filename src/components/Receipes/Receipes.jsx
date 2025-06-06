@@ -8,8 +8,8 @@ const Receipes = () => {
     console.log(categories)
     return (
         <div>
-            <h2 className="text-2xl bg-red-300">Categories: {categories.length}</h2>
-            <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <h2 className="text-2xl mt-10">Categories: {categories.length}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
                 {
                     categories.map(category => <Category key={category.idCategory} category={category}></Category>)
                 }
